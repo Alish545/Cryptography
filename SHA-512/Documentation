@@ -1,0 +1,31 @@
+This code is an implementation of the SHA-512 (Secure Hash Algorithm 512-bit) hashing algorithm in Python. Below is a brief documentation of the code:
+
+1. Additive Constants (K) and Initial Hash Values (HASH_VALUE):
+   - These are constants and initial values used in the SHA-512 compression function.
+   - The constants (K) and initial hash values (HASH_VALUE) are integral parts of the SHA-512 algorithm.
+
+2. SHA-512 Functions:
+   - 'Ch(e, f, g)' and 'Maj(a, b, c)' are functions used in the SHA-512 compression function.
+   - 'rotr(x, n)' performs a right circular shift operation on a 64-bit value 'x'.
+   - 'summation_a(a)' and 'summation_e(e)' apply bitwise rotations and XOR operations to intermediate values.
+   - 'sigma_0(word)' and 'sigma_1(word)' perform specific bitwise operations on a 64-bit word.
+   - 'addition_modulo_2_64(value)' calculates the modulo 2^64 of a value.
+   - 'pad_message(message)' appends padding to the input message to ensure its length is a multiple of 1024 bits.
+   - 'divide_to_blocks(message)' splits the padded message into 1024-bit blocks.
+
+3. Main SHA-512 Compression Function:
+   - The 'compression_function(message)' implements the core SHA-512 compression function. It processes a 1024-bit block of data using the provided functions and constants.
+   - This function iterates through the message schedule and intermediate hash values and updates them in accordance with the SHA-512 algorithm.
+
+4. Main Code:
+   - The main code section is where the program execution begins.
+   - It takes user input as the message to be hashed, encodes it to bytes, and pads it to the required format.
+   - The message is divided into 1024-bit blocks, and the SHA-512 compression function is applied to each block.
+   - The final SHA-512 hash is printed to the console.
+
+This code is a basic implementation of SHA-512 for educational purposes and can be used to calculate the hash of an input message. The printed hash represents the message's digital fingerprint, which is useful for data integrity verification and security applications.
+
+Usage Example:
+- You can run this code and input a message to compute its SHA-512 hash.
+- The code also displays the message length in bits to give you insight into the hashing process.
+- The generated hash can be compared with known hashes of messages to verify their integrity.
